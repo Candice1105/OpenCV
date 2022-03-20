@@ -17,7 +17,7 @@ int main()
 
 	// define image ROI
 	cv::Mat imageROI;
-	imageROI = image(cv::Rect(216, 33, 24, 30));									              // Cloud region
+	imageROI = image(cv::Rect(216, 33, 24, 30));						            // Cloud region
 
 	// Display reference patch
 	cv::namedWindow("Reference");
@@ -34,7 +34,7 @@ int main()
 
 	// set histogram to be back-projected
 	finder.setHistogram(hist);
-	finder.setThreshold(-1.0f);
+	finder.setThreshold(0.12f);
 
 	// Get back-projection
 	cv::Mat result1;
@@ -47,12 +47,12 @@ int main()
 	cv::imshow("Backprojection result", tmp);
 
 	// Get binary back-projection
-	finder.setThreshold(0.12f);
+	finder.setThreshold(0.12f);														// change Threshold
 	result1 = finder.find(image);
-	
+
 	cv::Mat image2 = cv::imread("C:\\Users\\User\\Desktop\\moon1.jpg", 0);			// read as gray level image
-	cv::Mat result_2;															
-	result_2 = finder.find(image2);													                    // Get back-projection
+	cv::Mat result_2;
+	result_2 = finder.find(image2);								                    // Get back-projection
 
 	// Draw a rectangle around the reference area
 	cv::rectangle(image, cv::Rect(216, 33, 24, 30), cv::Scalar(0, 0, 0));
@@ -62,22 +62,22 @@ int main()
 	cv::imshow("Image", image);
 
 	// Display result
-	cv::namedWindow("Detection Result (1)");										                // change nameWindow
-	cv::imshow("Detection Result (1)", result1);									              // display result
+	cv::namedWindow("Detection Result (1)");						                // change nameWindow
+	cv::imshow("Detection Result (1)", result1);						            // display result
 
 	// Display result
-	cv::namedWindow("Detection Result (2)");										                // change nameWindow
-	cv::imshow("Detection Result (2)", result_2);									              // display result
+	cv::namedWindow("Detection Result (2)");						                // change nameWindow
+	cv::imshow("Detection Result (2)", result_2);									// display result
 
 	// Load color image
 	ColorHistogram hc;
 	cv::Mat color = cv::imread("C:\\Users\\User\\Desktop\\sunflower.jpg");			// read image
 
 	// extract region of interest
-	imageROI = color(cv::Rect(0, 0, 100, 45));										              // blue sky area
+	imageROI = color(cv::Rect(0, 0, 100, 45));							            // blue sky area
 
 	cv::namedWindow("First Image");
-	cv::imshow("First Image", color);												                    // display First Image
+	cv::imshow("First Image", color);							                    // display First Image
 
 	// Get 3D colour histogram (8 bins per channel)
 	hc.setSize(8); // 8x8x8
@@ -90,11 +90,11 @@ int main()
 	// Get back-projection of color histogram
 	result1 = finder.find(color);
 
-	cv::namedWindow("Color Detection Result (1)");									            // change nameWindow
-	cv::imshow("Color Detection Result (1)", result1);								          // display result
+	cv::namedWindow("Color Detection Result (1)");						            // change nameWindow
+	cv::imshow("Color Detection Result (1)", result1);								// display result
 
 	// Second color image
-	cv::Mat color2 = cv::imread("C:\\Users\\User\\Desktop\\moon1.jpg");				  // read image
+	cv::Mat color2 = cv::imread("C:\\Users\\User\\Desktop\\moon1.jpg");				// read image
 
 	cv::namedWindow("Second Image");
 	cv::imshow("Second Image", color2);
@@ -102,17 +102,17 @@ int main()
 	// Get back-projection of color histogram
 	cv::Mat result2 = finder.find(color2);
 
-	cv::namedWindow("Color Detection Result (2)");									            // change nameWindow
-	cv::imshow("Color Detection Result (2)", result2);								          // display result
+	cv::namedWindow("Color Detection Result (2)");						            // change nameWindow
+	cv::imshow("Color Detection Result (2)", result2);						        // display result
 
 	// Get ab color histogram
 	hc.setSize(256); // 256x256
 	cv::Mat colorhist = hc.getabHistogram(imageROI);
 
 	// display 2D histogram
-	colorhist.convertTo(tmp, CV_8U, -1.0, 255);										            // change parameter
-	cv::namedWindow("ab histogram (-1.0,255)");										            // change nameWindow
-	cv::imshow("ab histogram (-1.0,255)", tmp);										            // display result
+	colorhist.convertTo(tmp, CV_8U, -1.0, 255);							            // change parameter
+	cv::namedWindow("ab histogram (-1.0,255)");							            // change nameWindow
+	cv::imshow("ab histogram (-1.0,255)", tmp);										// display result
 
 	// set histogram to be back-projected
 	finder.setHistogram(colorhist);
@@ -162,7 +162,7 @@ int main()
 	cv::imshow("Result Hue (1)", result1);
 
 	// Second colour image
-	color2 = cv::imread("C:\\Users\\User\\Desktop\\moon1.jpg");						      // read image
+	color2 = cv::imread("C:\\Users\\User\\Desktop\\moon1.jpg");						// read image
 
 	// Convert to HSV space
 	cv::cvtColor(color2, hsv, cv::COLOR_BGR2HSV);
