@@ -29,12 +29,12 @@ int main()
 	cv::namedWindow("Mean filtered image (5x5)");
 	cv::imshow("Mean filtered image (5x5)", result);
 
-	// Blur the image (mean filter 9x9)
-	cv::blur(image, result, cv::Size(9, 9));
+	// Blur the image (mean filter 7x7)
+	cv::blur(image, result, cv::Size(7, 7));
 
-	// Display mean filtered Image (9x9)
-	cv::namedWindow("Mean filtered image (9x9)");
-	cv::imshow("Mean filtered image (9x9)", result);
+	// Display mean filtered Image (7x7)
+	cv::namedWindow("Mean filtered image (7x7)");
+	cv::imshow("Mean filtered image (7x7)", result);
 
 	// Blur the image (Gaussian filter 3x3)								// Gaussian Filter (sigma = 1)
 	cv::GaussianBlur(image, result, cv::Size(3, 3), 1, 1);
@@ -50,12 +50,12 @@ int main()
 	cv::namedWindow("Gaussian filtered image (5x5)(sigmaX = 1, sigmaY = 1)");
 	cv::imshow("Gaussian filtered image (5x5)(sigmaX = 1, sigmaY = 1)", result);
 
-	// Blur the image (Gaussian filter 9x9)
-	cv::GaussianBlur(image, result, cv::Size(9, 9), 1, 1);
+	// Blur the image (Gaussian filter 7x7)
+	cv::GaussianBlur(image, result, cv::Size(7, 7), 1, 1);
 
-	// Display Gaussian filtered Image (9x9)
-	cv::namedWindow("Gaussian filtered image (9x9)(sigmaX = 1, sigmaY = 1)");
-	cv::imshow("Gaussian filtered image (9x9)(sigmaX = 1, sigmaY = 1)", result);
+	// Display Gaussian filtered Image (7x7)
+	cv::namedWindow("Gaussian filtered image (7x7)(sigmaX = 1, sigmaY = 1)");
+	cv::imshow("Gaussian filtered image (7x7)(sigmaX = 1, sigmaY = 1)", result);
 
 	// Blur the image (Gaussian filter 3x3)(sigmaX = 2, sigmaY = 2)					// Gaussian Filter (sigma = 2)
 	cv::GaussianBlur(image, result, cv::Size(3, 3), 2, 2);
@@ -71,12 +71,12 @@ int main()
 	cv::namedWindow("Gaussian filtered image (5x5)(sigmaX = 2, sigmaY = 2)");
 	cv::imshow("Gaussian filtered image (5x5)(sigmaX = 2, sigmaY = 2)", result);
 
-	// Blur the image (Gaussian filter 9x9)(sigmaX = 2, sigmaY = 2)
-	cv::GaussianBlur(image, result, cv::Size(9, 9), 2, 2);
+	// Blur the image (Gaussian filter 7x7)(sigmaX = 2, sigmaY = 2)
+	cv::GaussianBlur(image, result, cv::Size(7, 7), 2, 2);
 
-	// Display Gaussian filtered Image (9x9)(sigmaX = 2, sigmaY = 2)
-	cv::namedWindow("Gaussian filtered image (9x9)(sigmaX = 2, sigmaY = 2)");
-	cv::imshow("Gaussian filtered image (9x9)(sigmaX = 2, sigmaY = 2)", result);
+	// Display Gaussian filtered Image (7x7)(sigmaX = 2, sigmaY = 2)
+	cv::namedWindow("Gaussian filtered image (7x7)(sigmaX = 2, sigmaY = 2)");
+	cv::imshow("Gaussian filtered image (7x7)(sigmaX = 2, sigmaY = 2)", result);
 
 	// Blur the image (median filter 3x3)								// Median Filter
 	cv::medianBlur(image, result, 3);
@@ -92,12 +92,12 @@ int main()
 	cv::namedWindow("Median filtered Image (5x5)");
 	cv::imshow("Median filtered Image (5x5)", result);
 
-	// Blur the image (median filter 9x9)
-	cv::medianBlur(image, result, 9);
+	// Blur the image (median filter 7x7)
+	cv::medianBlur(image, result, 7);
 
-	// Display median filter image (9x9)
-	cv::namedWindow("Median filtered Image (9x9)");
-	cv::imshow("Median filtered Image (9x9)", result);
+	// Display median filter image (7x7)
+	cv::namedWindow("Median filtered Image (7x7)");
+	cv::imshow("Median filtered Image (7x7)", result);
 
 	// Read as gray level image (Salt&Pepper)
 	image = cv::imread("C:\\Users\\User\\Desktop\\sunset_salt6000.bmp", 0);
@@ -122,12 +122,12 @@ int main()
 	cv::namedWindow("S&P mean filtered image (5x5)");
 	cv::imshow("S&P mean filtered image (5x5)", result);
 
-	// Blur the S&P image (mean filter 9x9)
-	cv::blur(image, result, cv::Size(9, 9));
+	// Blur the S&P image (mean filter 7x7)
+	cv::blur(image, result, cv::Size(7, 7));
 
-	// Display S&P mean filtered image (9x9)
-	cv::namedWindow("S&P mean filtered image (9x9)");
-	cv::imshow("S&P mean filtered image (9x9)", result);
+	// Display S&P mean filtered image (7x7)
+	cv::namedWindow("S&P mean filtered image (7x7)");
+	cv::imshow("S&P mean filtered image (7x7)", result);
 
 	// Blur the S&P image (Gaussian filter 3x3)							// S&P Gaussian Filter (sigma = 1)
 	cv::GaussianBlur(image, result, cv::Size(3, 3), 1, 1);
@@ -143,12 +143,12 @@ int main()
 	cv::namedWindow("S&P gaussian filtered image (5x5)(sigmaX = 1, sigmaY = 1)");
 	cv::imshow("S&P gaussian filtered image (5x5)(sigmaX = 1, sigmaY = 1)", result);
 
-	// Blur the S&P image (Gaussian filter 9x9)
-	cv::GaussianBlur(image, result, cv::Size(9, 9), 1, 1);
+	// Blur the S&P image (Gaussian filter 7x7)
+	cv::GaussianBlur(image, result, cv::Size(7, 7), 1, 1);
 
-	// Display S&P gaussian filtered Image (9x9)
-	cv::namedWindow("S&P gaussian filtered image (9x9)(sigmaX = 1, sigmaY = 1)");
-	cv::imshow("S&P gaussian filtered image (9x9)(sigmaX = 1, sigmaY = 1)", result);
+	// Display S&P gaussian filtered Image (7x7)
+	cv::namedWindow("S&P gaussian filtered image (7x7)(sigmaX = 1, sigmaY = 1)");
+	cv::imshow("S&P gaussian filtered image (7x7)(sigmaX = 1, sigmaY = 1)", result);
 
 	// Blur the S&P image (Gaussian filter 3x3)(sigmaX = 2, sigmaY = 2)				// S&P Gaussian Filter (sigma = 2)
 	cv::GaussianBlur(image, result, cv::Size(3, 3), 2, 2);
@@ -164,12 +164,12 @@ int main()
 	cv::namedWindow("S&P gaussian filtered image (5x5)(sigmaX = 2, sigmaY = 2)");
 	cv::imshow("S&P gaussian filtered image (5x5)(sigmaX = 2, sigmaY = 2)", result);
 
-	// Blur the S&P image (Gaussian filter 9x9)(sigmaX = 2, sigmaY = 2)
-	cv::GaussianBlur(image, result, cv::Size(9, 9), 2, 2);
+	// Blur the S&P image (Gaussian filter 7x7)(sigmaX = 2, sigmaY = 2)
+	cv::GaussianBlur(image, result, cv::Size(7, 7), 2, 2);
 
-	// Display S&P gaussian filtered Image (9x9)(sigmaX = 2, sigmaY = 2)
-	cv::namedWindow("S&P gaussian filtered image (9x9)(sigmaX = 2, sigmaY = 2)");
-	cv::imshow("S&P gaussian filtered image (9x9)(sigmaX = 2, sigmaY = 2)", result);
+	// Display S&P gaussian filtered Image (7x7)(sigmaX = 2, sigmaY = 2)
+	cv::namedWindow("S&P gaussian filtered image (7x7)(sigmaX = 2, sigmaY = 2)");
+	cv::imshow("S&P gaussian filtered image (7x7)(sigmaX = 2, sigmaY = 2)", result);
 
 	// Blur the S&P image (median filter 3x3)							// S&P Median Filter
 	cv::medianBlur(image, result, 3);
@@ -185,12 +185,12 @@ int main()
 	cv::namedWindow("S&P median filtered Image (5x5)");
 	cv::imshow("S&P median filtered Image (5x5)", result);
 
-	// Blur the S&P image (median filter 9x9)
-	cv::medianBlur(image, result, 9);
+	// Blur the S&P image (median filter 7x7)
+	cv::medianBlur(image, result, 7);
 
-	// Display S&P median filter image (9x9)
-	cv::namedWindow("S&P median filtered Image (9x9)");
-	cv::imshow("S&P median filtered Image (9x9)", result);
+	// Display S&P median filter image (7x7)
+	cv::namedWindow("S&P median filtered Image (7x7)");
+	cv::imshow("S&P median filtered Image (7x7)", result);
 
 
 	cv::waitKey();
